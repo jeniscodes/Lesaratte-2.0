@@ -1,0 +1,94 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<section class="container-md-fluid mt-5 ">
+
+    {% if message %}
+
+    
+  <div class="alert justify-content-end" role="alert" id="alert">
+    {{ message }}
+   
+</div>
+    
+    {% endif %}
+
+    <div class="bookdetails mb-5"> Profile Settings </div>
+
+
+
+    <div class="row">
+
+<div class="col-md-6">
+
+
+<form enctype="multipart/form-data" action="{% url 'editprofile'  request.user.id  %}" method="POST">
+        {% csrf_token %}  
+
+
+    <span class="texttitle ">  Name </span> <br>
+    <input type="text" class="setting-input" name="name" id="name" data-name="{{request.user.name}}"> </input> <br>
+                   
+                  
+    <span class="texttitle">  Username </span> <br>
+    <input type="text" class="setting-input" name="username" id="username" data-username="{{request.user.username}}" /> <br>
+
+    <span class="texttitle  ">  Email  Address </span> <br>
+    <input type="email" class="setting-input" name="email" id="email" data-email= "{{request.user.email}}" /> <br>
+
+
+    
+
+
+   
+
+</div>
+
+<div class="col-md-6 pl-5 pt-5 ">
+
+
+    <img id="profileimage-setting"  class=" img-prof image-profile img-fluid ml-5" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'"  alt="100x100" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ user.imagefile }}'> 
+    <br>
+    <br>
+ 
+
+   
+
+    <label for="file-upload" class="file-upload">
+        <i class="fa fa-cloud-upload"></i> Upload your avatar
+    </label>
+    <input id="file-upload" type="file" name="imagefile" onchange="readURL(this);" />
+
+  
+    
+
+   
+
+</div>
+
+    </div>
+
+    <button type="submit"  data-id="{{ request.user.id }}" class="butn sub-btn mt-5" id="save_btn"  style="float: left;"> Save Changes </button>
+    
+    
+</form>
+   
+    
+    </section>
+
+{% endblock %}
+
+
+
+
+
+{% block script %}
+
+
+   
+    <script src="{% static 'network/settings.js' %}"></script>
+    
+{% endblock %}

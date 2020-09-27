@@ -1,0 +1,67 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<section class="container-fluid mt-5"> 
+
+    <div class="row">
+        
+    <div class="col-md-7">
+
+        <p class ="texttitle "> Books by </p>   <p class= "bookdetails mb-3 "> {{ author.name }} </p>
+
+        
+    
+        <div class='row'>
+        {% for book in books %}
+     
+
+       
+        <div class="col-sm-2 col-3 px-1 ">
+            <div class="tooltipt">
+
+            
+            
+            <img src="{{ book.image_url }}"  class="img-fluid img-books img-open mt-1 ml-1 mr-1 mb-1" onclick="location.href='/opengbook/{{ book.isbn }}'"> 
+        
+            <span class="tooltiptext d-none d-md-block">  
+                {{ book.title_without_series }} 
+                <br>  ({{ book.publication_year  }})</span>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+
+    </div>
+
+    <div class="col-md-5 author-column ">
+        <img src="{{ author.large_image_url }}" class=" img-fluid img-author-full mb-2 ">
+
+
+
+        <p class="author-description">   {{ description }}</p>   
+
+
+
+    </div>
+</div>
+
+
+<div id="read-more" style="display: none;"> </div>
+
+</section>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block script %}
+    <script src="{% static 'network/author.js' %}"></script>
+{% endblock %}

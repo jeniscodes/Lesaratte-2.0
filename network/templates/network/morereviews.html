@@ -1,0 +1,135 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<section class= 'mt-5'>
+<span class=" text-profile  py-5  mt-5 "> {{ sort }} REVIEWS
+   <hr class="mt-1" > </span>
+
+{% if book == 'no' %}
+
+{% for review in page_obj %}
+    
+<div class="row">
+
+  <div class="col-sm-1 col-3">
+    <img class=" avatar-book py-0 my-0" alt="100x100" onclick="location.href='/open_review/{{ review.id }}'" data-holder-rendered="true" src='{{ review.img_book }}'>   
+    
+
+  </div>
+  <div class="col-sm-11 col-9 col-right">
+
+    <span class="book-title" onclick="location.href='/open_review/{{ review.id }}'"> {{review.title}} </span>   <span class="timestamp mt-2" >{{ review.timestamp}}  </span> 
+    <p class=" pt-2">   <img class=" avatar-half py-0 my-0" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'" alt="100x100" onclick="location.href='/profile/{{ review.reviewerid }}'" data-holder-rendered="true" src='/media/images/{{ review.image }}'> 
+      <span class="pl-2 reviewby " onclick="location.href='/profile/{{ review.reviewerid }}'">   {{ review.reviewername }}  
+      @{{ review.reviewerusername}}  </span>  </span> <span class="ratestar down-star r{{review.id}} ml-2 " data-rate= "{{ review.bookrating }}" data-id= "{{ review.id }}" > <span class="stars-outer">
+        <span class="stars-inner"></span>
+      </span> </span></p></p>
+  
+
+  </div>
+
+</div>
+
+<p> <pre class="content-books"> {{ review.content}}   </pre> </p>  
+ <div class="like-block ">
+     <span onclick="like(this)" id="like{{review.id}}" data-id="{{ review.id }}"> 
+     {% if review.liked == 'yes' %}
+   
+              <i class="fa heart fa-heart" style="color:teal"></i>
+     {% else %}
+     <i class="fa heart">&#xf08a;</i>
+     {% endif %}
+
+     {{ review.likes }}  
+     </span> <span class="ml-5" onclick="location.href='/open_review/{{ review.id }}'" > 
+     <i class="fa fa-comment-o" aria-hidden="true"></i>  {{ review.comments }}
+     </span>  
+     
+</div> 
+  
+  
+
+  
+  <hr class="style14">
+  {% endfor %}
+
+
+  {% else %}
+  {% for review in page_obj %}
+
+      
+  <img class=" avatar py-0 my-0" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'" alt="100x100" onclick="location.href='/open_review/{{ review.id }}'" data-holder-rendered="true" src='/media/images/{{ review.image }}'>   
+  <span class="pl-2 reviewby " onclick="location.href='/open_review/{{ review.id }}'"> <span class="reviewspan"> Review by </span>  <span class="username pl-1">  {{ review.reviewername }}  
+     @{{ review.reviewerusername}} </span> </span> <span class="timestamp mt-2" >{{ review.timestamp}}  </span> 
+ <p> <pre class="content"> {{ review.content}}   </pre> </p>  
+   <div class="likeblock ">
+       <span onclick="like(this)" class="like{{review.id}}" data-id="{{ review.id }}"> 
+       {% if review.liked == 'yes' %}
+     
+                <i class="fa heart fa-heart" style="color:teal"></i>
+       {% else %}
+       <i  class="fa heart">&#xf08a;</i>
+       {% endif %}
+
+       {{ review.likes }}  
+       </span> <span class="ml-5" onclick="location.href='/open_review/{{ review.id }}'" > 
+       <i class="fa fa-comment-o" aria-hidden="true"></i>  {{ review.comments }}
+       </span>  
+       
+ </div> 
+    
+    
+
+    
+    <hr class="style14">
+    {% endfor %}
+  {% endif %}
+
+
+  
+  <span class="pagination  ">
+
+    {% if page_obj.has_previous %}
+   
+    <div class="page-item"><a class="page-link  " href="?page={{ page_obj.previous_page_number }}">Previous</a></div>
+     
+
+    {% endif %}
+   
+    {% if page_obj.has_next %}
+
+    <div class="page-item page-right" ><a class="page-link " href="?page={{ page_obj.next_page_number }}" >Next</a></div>
+    
+   
+    {% endif %}
+    </span>
+</section>
+
+
+
+
+    
+
+       
+      
+      
+      
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block script %}
+    <script src="{% static 'network/morereviews.js' %}"></script>
+{% endblock %}

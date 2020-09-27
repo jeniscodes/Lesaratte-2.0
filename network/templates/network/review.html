@@ -1,0 +1,356 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+
+
+
+
+
+
+
+
+<section class="container-fluid  mt-5 review-section px-md-0 mx-0 ">
+
+
+
+    
+  <div class="row">
+    <div class=" col-3 pl-md-5 mt-md-1 px-0  ">
+
+      <img src=" {{ bookdetails.img  }}" class=" img-open img-book img-fluid ml-md-3 " onclick="location.href='/openbook/{{ bookdetails.isbn }}'">
+
+    </div>
+
+
+
+    <div class="col-9  my-0 py-0  px-md-0 ">
+
+    
+       <div class="d-block d-lg-none ">
+           
+        <span class="pl-md-1 ">  Review by   <span class="username pl-1" onclick="location.href='/profile/{{ review.reviewer.id }}'">  {{ review.reviewer.name }}  
+           @{{ review.reviewer.username}}   </span>    
+            
+
+          
+  
+  
+        <p class="  bookdetailssmall "  onclick="location.href='/openbook/{{ bookdetails.isbn }}'"> {{ bookdetails.title }}  </p>
+        <span class="ratestar r{{review.id}}  " data-rate= "{{ review.bookrating }}" data-id= "{{ review.id }}" > <span class="stars-outer">
+          <span class="stars-inner"></span>
+        </span>  </span>   <p class="times pl-3"> {{ bookdetails.timestamp }}  </p>
+     
+  
+        <br>
+         
+        <br> </div>
+
+        <div class= "d-none d-lg-block " >
+         
+
+          <span class="pl-md-1 d-none d-md-block">  <img class=" avatar py-0 my-0 mx-0"  onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'" alt="100x100" onclick="location.href='/profile/{{ review.reviewer.id }}'" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ review.reviewer.imagefile }}'>   
+      <span class="pl-2" > Review by </span>  <span class="username pl-1" onclick="location.href='/profile/{{ review.reviewer.id }}'" >  {{ review.reviewer.name }}  
+         @{{ review.reviewer.username}}  </span> <span class="ratestar r{{review.id}} ml-2 " data-rate= "{{ review.bookrating }}" data-id= "{{ review.id }}" > <span class="stars-outer">
+          <span class="stars-inner"></span>
+        </span> </span>  <span style="float: right;" class="mr-5">{{ bookdetails.timestamp }} </span>   </span> 
+    
+
+         <hr class="mt-1">
+
+      <p class=" booktitle bookdetails ml-2"  onclick="location.href='/openbook/{{ bookdetails.isbn }}'">{{ bookdetails.title }}  <span class="texttitle ml-2">  {{bookdetails.year}}  </span>
+      </p>
+
+    </div>
+
+     
+      
+      <div class= "shift-left">
+       
+     
+      <div id="edit-content" class='my-4'>
+
+        <form >
+  
+
+
+
+
+          <textarea id='reviewedit' class="textarea resize-ta from-control "  ></textarea> 
+         
+         
+         <br>
+         
+         
+         <button  type="button" onclick="return edit_save(this);"  id='edit_submit' data-id={{ review.id}} class="butn "> Save </button>
+          
+         
+         </form>
+      </div>
+
+     
+      <p class= 'my-4 ' > 
+        
+        <div class="row mainbox">
+          <div class="col-md-11 ">
+            
+            <pre class="review-text mt-3" id="review-box">{{review.content}}</pre>  
+
+          </div>
+
+          
+          <div class="col-md-1 child-edit ">
+            {% if request.user == review.reviewer %}
+            
+
+            <span  data-id={{ review.id }} id="edit_btn" onclick="edit(this)" class="mr-2"> <i class="fa fa-edit"></i> </span>
+
+            <i class="fa fa-trash" data-toggle="modal" data-target="#exampleModal" aria-hidden="true"></i>
+            {% endif %}
+
+          </div>
+        
+        </div>
+
+         
+
+       
+      </p>
+
+      
+    <div class="smalllike"> 
+      <span onclick="like(this)" id="like{{ review.id }}" data-id="{{ review.id }}" class=" like-review ml-2"> 
+        {% if liked == 'yes' %}
+        <i class="fa fa-heart heart" style="color:teal"></i>
+        {% else %}
+        <i  class="fa heart">&#xf08a;</i> 
+        {% endif %}
+      </span>
+
+      <span  id="num_like" class="ml-2 like-num "  data-toggle="modal" data-target="#exampleModalLong">
+
+        {{ num_likes }} 
+         
+      </span> 
+    </div>
+
+    </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="comments mt-md-5 pl-md-5 ">
+
+
+<span id="commentsnum "> {{ num_comments }} </span>  COMMENTS
+<hr class=" my-1 lines ">
+<div id="commentfeed">
+{% if comments %}
+    
+{% for comment in comments %}
+
+<div class="row">
+
+<div class="col-lg-3 pt-0 mt-1  ">
+
+  <img class=" avatar py-0 my-0" alt="100x100" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'"  onclick="location.href='/profile/{{ comment.commenter.id }}'" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ comment.commenter.imagefile }}'> 
+ <span onclick="location.href='/profile/{{ comment.commenter.id }}'" class=" comment-user ml-md-3 ml-1 mt-0 pt-0 "> {{ comment.commenter.name }}  @{{comment.commenter.username}} </span> 
+
+</div>
+<div class="col-lg-9 comment-text pl-3 pb-0 ">
+<pre class="mt-0 pl-0 py-0 ml-0  mt-3    commenttext">{{ comment.comment }}</pre>
+{% if request.user == review.reviewer or request.user == comment.commenter  %}
+<i class="fa fa-trash trashicon mt-0 py-0 pt-0 " 
+data-toggle="modal" data-target="#exampleModal2" aria-hidden="true" data-id={{comment.id}} onclick="deletethis(this)"></i> 
+{% endif %}
+</div>
+
+</div>
+
+<hr class="mb-1 lines mt-3">
+
+
+
+
+
+
+{% endfor %}
+
+{% else %}
+
+<br>
+<br>
+
+No comments yet
+
+<br>
+<br>
+
+
+
+
+
+
+{% endif %}
+
+</div>
+
+<div id="temporary">
+  <div class="row" >
+  
+    <div class="col-lg-3 pt-0 mt-1 ">
+    
+      <img class=" avatar py-0 my-0" alt="100x100"  onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'" onclick="location.href='/open_review/{{ review.id }}'" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ request.user.imagefile }}'> 
+     <span class=" comment-user ml-md-3 ml-1 mt-0 pt-0" >{{ request.user.name }}  @{{ request.user.username}} </span> 
+    
+    </div>
+    <div class="col-lg-9 comment-text pl-3 pb-0">
+    <pre class="comment-text mt-0  ml-0 py-0 mt-3  commenttext" id="tempcontent"></pre> 
+  
+    
+    </div>
+  
+  
+    
+    </div>
+  
+  
+    <hr>
+  
+  </div>
+
+
+<div class="row" id="user" data-user='{{request.user.username }}' data-reviewer='{{ review.reviewer.username }}'' data-id='{{ review.id}}'>
+  <div class=" col-md-3">
+
+ 
+</div>
+<div class="col-lg-9 mt-3">
+
+  {% if user.is_authenticated %}
+
+
+<form id="compose">
+  
+
+
+
+
+  <textarea id='commentedtext' class="textarea resize-tab from-control "   placeholder="Add a comment..." ></textarea> 
+
+ 
+ 
+ <br>
+ 
+ 
+ <button  type="button" onclick="return post_comment(this);"  id='comment_submit' data-id={{ review.id}} class="butn "> Post </button>
+  
+ 
+ </form>
+
+{% else %}
+
+<span class="signin" onclick="location.href='/login'"> Sign in  </span> to comment on the review.
+ <br>
+ {% endif %}
+</div>
+
+</div>
+
+
+
+
+
+</section>
+</div>
+
+
+<!--Delete Comment  Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <h5  class="modaltext"> Delete the comment ? </h5>
+      </div>
+     
+        <span class="btn-modals">
+        <button type="button" class="btn-modal" data-dismiss="modal" onclick="deletecomment(this)" >Delete</button> 
+        <button type="button" class="btn-modal" data-dismiss="modal">Cancel</button></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Delete  Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+   
+
+        <div class="modal-body">
+          <h5  class="modaltext"> Delete the post ? </h5>
+        </div>
+       
+          <span class="btn-modals">
+          <button type="button" class="btn-modal" data-dismiss="modal"  data-id="{{ review.id }}" onclick="return deletereview(this);" >Delete</button> 
+          <button type="button" class="btn-modal" data-dismiss="modal">Cancel</button></span>
+        </div>
+     
+  </div>
+</div>
+
+
+<!--Likes  Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+              
+     <h5 class="like"> Likes   <hr class=" lines ">   </h5>
+     
+    
+    
+          <div id="modalbody" > 
+        
+
+        {% if likes %}
+        
+        {% for like in likes %}
+
+        <img class=" avatar py-0 my-0" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'"  alt="100x100" onclick="location.href='/profile/{{ like.liker.id }}'" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ like.liker.imagefile }}'> 
+        <span onclick="location.href='/profile/{{ like.liker.id }}'" class=" comment-user ml-md-3 ml-1 mt-0 pt-0 "> {{ like.liker.name }}  
+
+        @{{like.liker.username}} </span> 
+
+        <hr class="lines">
+       
+
+     
+
+        {% endfor %}
+  
+        {% endif %}
+
+      </div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block script %}
+    <script src="{% static 'network/review.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,1943 @@
+img
+{
+    width: 50px;
+    height: 50px;
+}
+
+body
+{
+    background-color: rgb(31, 38, 45);
+    font-family: 'Tajawal', sans-serif;
+    color: #99AABB;
+    font-weight: 400;
+    scroll-behavior: smooth;
+
+}
+
+.dropdown-menu
+{
+    background-color: rgb(31, 38, 45);
+    color: whitesmoke; 
+}
+
+.dropdown-item
+{
+    color:#99AABB;
+}
+
+.dropdown-item:hover
+{
+   background-color: #2c3440;
+   color:#99AABB;
+}
+
+@media screen and (max-width: 700px) {
+
+   .reviewspan
+   {
+       display: none;
+   }
+
+    p, pre.content , .username , p.booktitle
+    {
+       font-size: 0.9rem;
+    }
+
+    img.img-book 
+    {
+        height: 120px;
+    }
+    
+    .timestamp
+    {
+        display: none;
+    }
+
+   
+    }
+
+
+
+    
+img.img-author-full
+{
+   width: 230px;
+   height: 345px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   padding-top: 5%;
+}
+
+@media screen and (max-width: 998px){
+    div.author-column
+{
+    padding: 0%;
+    margin:0%;
+}
+
+p.author-description
+{
+    margin: 0%;
+  
+    padding: 0%;
+}
+}
+@media screen and (min-width: 998px)
+{
+div.author-column
+{
+    margin-left:-6%;
+}
+
+p.author-description
+{
+    margin-top: 5%;
+    margin-left:23%;
+    margin-right: 18% ;
+}
+}
+
+.authorlink
+{
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.authorlink:hover, .like-num:hover
+{
+    color:teal;
+    cursor:pointer;
+}
+
+
+
+
+pre {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.05rem; 
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.nav-link
+{
+    color: #fffef2;
+    
+}
+
+
+
+@media screen and (max-width: 998px) {
+.smallrt
+{
+   left:-11%;
+}
+}
+
+@media screen and (max-width: 600px) {
+    .smallrt
+    {
+       left: 3%;
+    }
+    }
+
+
+.img-open
+{
+  height: 200px;
+  width: 150px ;
+  
+}
+
+@media screen and (max-width: 1000px)
+{
+div.mainbox
+{
+    width:100%;
+}
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    .img-open 
+    {
+       width: 120px;
+    }
+     }
+    
+
+.author-img
+{
+    height: 150px;
+    width : 130px;
+    cursor: pointer;
+}
+
+.author-img:hover, .img-book:hover  , .profile-books:hover , .books-prof:hover , .index-books:hover , .avatar-book:hover , .avatar-half:hover
+,.search-:hover , .search-img:hover
+{
+    border: 4px solid teal;
+    cursor: pointer;
+}
+
+.avatar-half:hover
+{
+    border: 1px solid teal;
+    cursor: pointer;
+}
+
+.book-title:hover , .book-titles:hover
+{
+    cursor: pointer;
+    color: teal;
+
+}
+
+
+.bookdetails
+{
+    
+    font-size: 1.5rem ;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-bottom: 0%;
+   
+    
+    
+}
+
+
+.book-titles
+{
+    
+    font-size: 1.5rem ;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-bottom: 0%;
+    margin-left: 2%;
+    display: inline-block;
+   
+    
+    
+}
+
+.col-right
+{
+    padding-left:2%;
+}
+
+   
+  @media screen and (min-width: 535px) and (max-width:1100px) 
+{
+    
+.col-right
+{
+    padding-left: 9%;
+}
+
+}
+
+@media screen and (max-width: 530px)  
+{
+    
+.col-right
+{
+    padding-left: 6%;
+}
+
+}
+
+@media screen and (max-width: 1100px)
+{
+    .book-titles
+{
+   font-size: 1.05rem;
+   font-weight: 500;
+   color:whitesmoke;
+   margin-left: 2%;
+   display: inline-block
+}
+
+p.search-author
+{
+    font-size: 0.95rem;
+    font-weight: 400;
+   
+   
+}
+
+
+}
+.book-year
+{
+
+    font-size: 1.5rem ;
+    font-weight: 400;
+   
+    margin-bottom: 0%;
+}
+
+@media screen and (max-width: 1100px)
+{
+    .book-year
+{
+  
+   font-size: 1.05rem;
+   font-weight: 400;
+   
+
+}
+}
+
+@media screen and (min-width: 600px)
+{
+    img.search-img
+{
+  
+   margin-left: 25%
+   
+
+}
+
+}
+
+
+
+
+    .search-text
+{
+  
+  padding-right:0% ;
+   
+
+}
+
+.bookdetailssmall
+{
+    font-size: 1.05rem;
+    font-weight: 700;
+    overflow: hidden;
+ 
+    color: whitesmoke;
+  
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+.texttitle
+{
+    font-weight: 500;
+    color:#849896;
+}
+
+.cattitle
+{
+    float:right;
+    font-weight: 500;
+    color:#849896;
+    
+
+}
+
+.break
+{
+    margin-top: 0.4%;
+}
+
+@media screen and (max-width: 440px) {
+.cattitle
+{
+float:left; 
+margin:0% ;
+margin-bottom: 50%;   
+
+}
+
+option 
+{
+    line-height: 1%;
+}
+
+.break
+{
+    margin-top: 7%;
+}
+
+}
+
+
+
+table.author
+{
+    width:150px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    table.author
+    {
+       width: 120px;
+    }
+     }
+
+.favorited_add
+{
+
+    float:right;
+    
+    border: none;
+    background-color: teal;
+    font-weight: 700;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: whitesmoke;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.smallfavbutton
+{
+
+    
+    border: none;
+    color: whitesmoke;
+    font-weight: 700;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+   
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.favorite_:hover
+ {
+   
+    opacity:0.5;
+   
+}
+
+
+.favorited
+{
+    background-color: teal;
+}
+
+
+.add_fav
+{
+    background-color: #555;
+}
+
+
+
+
+
+.favorite_:focus
+{
+    outline-style: none;
+}
+
+.favorited_
+{
+   
+    float:right;
+    
+    border: none;
+    background-color: #555;
+    font-weight: 700;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: whitesmoke;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    
+    border: none;
+    color: whitesmoke ;
+}
+
+ .page-item , .page-link
+{
+    background-color: #2c3440;
+    color: whitesmoke;
+    border-color: #2c3440;
+    border-radius: 0px;
+    
+}
+
+.page-item:hover , .page-link:hover
+{
+    color: teal;
+    background-color: #2c3440;
+    border-radius: 0px;
+    border-color: #2c3440;
+    
+}
+
+
+span.pagination:focus , div.page-item:focus , a.page-link:focus
+{
+    outline: none !important;
+}
+
+
+a.more
+{
+    text-decoration: none;
+}
+
+
+
+.page-right
+{
+  
+   margin-left: auto;
+   border-radius: 0px;
+}
+
+.more
+{
+   float: right;
+}
+
+.more:hover, a:hover
+{
+    color: teal;
+    text-decoration-style: none;
+}
+
+hr { 
+    border: 0.5px solid #456; 
+
+    
+
+  
+   border-color: #2c3440;
+   overflow: hidden;
+  
+  }
+
+.timestamp
+{
+    float:right;
+}
+
+.likeblock
+{
+    padding-left: 65px ;
+}
+
+.like-block
+{
+    padding-left: 0px ;
+    padding-top:1% ;
+}
+
+.book-title
+{
+   font-size: 1.15rem;
+   font-weight: 700;
+   color:whitesmoke;
+}
+
+p.search-author
+{
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-left:2%;
+    
+   
+   
+}
+
+
+
+@media screen and (max-width: 998px)
+{
+    .book-title
+{
+   font-size: 1.05rem;
+   font-weight: 500;
+   color:whitesmoke;
+}
+
+
+
+}
+
+pre
+{
+  
+    color:#99AABB;
+    padding-left: 65px;
+    margin-top: -15px;
+}
+
+.avatar {
+        border: 1px solid ;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+.avatar-book
+{
+    border: 1px solid ;
+    vertical-align: middle;
+    width: 81px;
+    height: 118.5px;
+}
+
+@media screen and (max-width: 1020px)
+{
+svg
+{
+    height:auto;
+    width:auto;
+}
+}
+
+
+
+  
+#alert
+{
+  
+    position: fixed; 
+    right: auto; 
+    bottom: 5%;
+    
+    left: 30%; 
+    width: 50%; 
+    text-align: center;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+    border-radius: 10px;
+    background-color: teal;
+    color: whitesmoke;
+	z-index: 1200;
+	display: none;
+    
+    
+ 
+}
+
+@media screen and (max-width: 630px)
+{
+   
+	#alert
+	{
+	  
+		position: fixed; 
+		right: auto; 
+		bottom: 5%; 
+		left: 7%; 
+		width: 85%; 
+		text-align: center;
+		padding-top: 0.8%;
+		padding-bottom: 0.8%;
+		border-radius: 10px;
+		background-color: teal;
+		color: whitesmoke;
+		z-index: 1200;
+		display: none;
+		
+		font-size: 0.75rem;
+		
+	 
+	}
+
+}
+
+.avatar-half
+{
+    
+
+    border: 1px solid ;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1%;
+  
+}
+
+
+
+.img-books
+{
+    height: 150px;
+}
+@media screen and (max-width: 900px)
+{
+
+    pre.content-books
+{
+   font-size: 0.95rem;
+   margin-left:0%;
+   
+}
+}
+
+
+
+.content-books
+{
+   margin-left:-6%;
+   font-size: 1rem;
+   margin-top:3%; 
+}
+
+
+
+
+
+
+
+
+
+
+.avatar:hover,.img-books:hover
+{
+    border: 2px solid teal;
+    cursor: pointer;
+}
+.belowmore
+{
+    margin-top: -15px;
+    border-width: 0.5px;
+}
+
+
+.username
+{
+    font-weight: 700;
+    color: whitesmoke;
+}
+
+a
+{
+    color:#99AABB;
+}
+
+
+.fa:hover {
+    cursor: pointer;
+    color:teal;
+}
+
+
+
+.butn
+{
+    
+    float: right;
+    border-radius: 6px;
+    background-color: teal;
+    border: none;
+    color: whitesmoke;
+    font-weight: 700;
+   
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    padding: 8px 28px;
+    cursor: pointer;
+    
+}
+
+button.btn-modal
+{
+    
+
+    background-color: teal;
+    border: none;
+    color: whitesmoke;
+    font-weight: 700;
+    width:70px;
+    float:right;
+    margin:6px;
+   
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+ 
+    padding: 8px 12px;
+    cursor: pointer;
+    
+}
+
+button.btn-modal:hover
+{
+    opacity:0.78;
+}
+
+.author-body
+{
+    background: rgb(31, 38, 45);
+}
+
+
+#footer {
+    background: #14181c;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 140px;
+    bottom: 0%;
+}
+
+#temporary
+{
+
+  opacity: 0.5;
+
+}
+
+
+#footer h4 {
+    color: #fcfafa;
+    font-size: 12px;
+    font-weight: 200;
+
+}
+
+.sticky {
+  
+  position: fixed;
+  top: 0;
+ 
+ 
+  }
+
+.stickyo {
+    
+    margin-top: 1250px;
+  
+    width: 100%;
+  }
+
+.right
+{
+    left: 16.7%;
+}
+
+.textarea {
+    border: 1px solid #ccc;
+    font-family: inherit;
+    color: #14181c;
+    font-size: inherit;
+    padding: 8px 8px;
+    background-color: #8899AA;
+    font-weight: 500;
+  }
+
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #14181c;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #14181c;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #14181c;
+  }
+
+
+  .textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 120px;
+    line-height: 22px;
+  }
+  
+
+
+  .smalldetails
+  {
+      float:right;
+  }
+
+
+
+@media screen and (max-width: 1000px) {
+pre,.likeblock
+{
+    padding-left : 0px ;
+    margin: 0px 0px  22px;
+}
+ }
+
+
+.expand:hover
+{
+  color: teal;
+}
+
+.expand
+{
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.reviewby:hover, .username:hover
+
+{
+    color:teal;
+    cursor: pointer;
+}
+
+
+
+#navbaritems
+{
+    color: whitesmoke;
+    
+}
+
+
+@media screen and (max-width: 992px) {
+
+    #navitems
+{
+    
+    color: whitesmoke;
+}
+}
+
+@media screen and (min-width: 1000px) {
+
+.comment-text, #compose
+{
+    margin-left: -3.5%;
+}
+.tempcontent
+{
+    margin-left: -8.5%;
+}
+ 
+}
+
+
+.search-box .input {
+    width: 0px;
+   
+    border: 0px;
+    overflow: hidden;
+    outline: none;
+    background-color: rgb(31, 38, 45);
+    transition: all 0.5s ease;
+
+  }
+
+  .icon-1:hover {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .search-box .input.active {
+    width: 200px;
+    padding: 5px 10px;
+    background-color: #8899AA;
+   
+    
+  }
+
+
+  @media screen and (max-width: 500px) {
+    .search-box .input.active {
+      width: 200px;
+    }
+}
+
+.review-text
+{
+    margin-left: -55px;
+    font-weight: 500;
+    font-size: 1.08rem;
+    
+
+}
+
+
+@media screen and (max-width: 998px) {
+    .review-text
+    {
+        margin-left:10px;
+    }
+}
+
+
+.mainbox > .child-edit {
+    visibility: hidden;
+  }
+  .mainbox:hover > .child-edit {
+    visibility: visible;
+  }
+
+  .comment-text > .trashicon {
+    visibility: hidden;
+  }
+  .comment-text:hover > .trashicon {
+    visibility: visible;
+  }
+
+.trashicon
+{
+    top: 0px;
+    right:0px;
+    float:right;
+}
+
+.comment-user:hover , .booktitle:hover , .bookdetailssmall:hover
+{
+    cursor:pointer;
+    color:teal;
+
+}
+
+.comment-user,.commenttext
+{
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 700px)
+
+{
+    .comment-user{
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .commenttext
+    {
+        font-size: 14px;
+        
+        margin-bottom: -10px;
+        
+    }
+
+    img.avatar
+    {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          
+    }
+    @media screen and (max-width: 700px)
+    {
+    hr.lines 
+    {
+        margin-left:-15px;
+        margin-right:-10px;
+    }
+
+}
+    .review-text
+    {
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: -18px;
+        
+    }
+
+    .shift-left
+    {
+      margin-left: -35%;
+    }
+    .smalllike
+    {
+       margin-left: -25px;
+        margin-top:-35px;
+        margin-bottom: 20px;
+    }
+    img.img-books
+    {
+       
+        width:77px;
+        height:115.5px;
+
+    }
+
+    @media screen and (max-width: 998px)
+    {
+        img.img-books
+        {
+           
+            width:77px;
+            height:115.5px;
+    
+        }
+    }
+
+    .child-edit
+    {
+        float: right;
+        margin-left:80%;
+    }
+}
+
+.modal-content
+{
+    background-color:rgb(31, 38, 45)
+}
+
+h5
+{
+    font-style: 'Tajawal', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #99AABB;
+}
+
+h5.like
+{
+    margin: 20px;
+}
+
+#modalbody
+{
+   
+    padding: 20px;
+    margin-top: -50px;
+}
+
+
+
+.tooltipt {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  .tooltipt .tooltiptext {
+    visibility: hidden;
+ 
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 0;
+    font-size: 0.90rem;
+    position: absolute;
+    z-index: 1;
+
+    bottom: 105%;
+    left: 25%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltipt .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltipt:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  
+.image-profile
+{
+
+        border: 1px solid ;
+        vertical-align: middle;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: inline;
+      
+}
+@media screen and (max-width: 1000px)
+{
+    .image-profile
+{
+
+        border: 1px solid ;
+        vertical-align: middle;
+        width: 82px;
+        height: 82px;
+        margin-left: 13%;
+        border-radius: 50%;
+        object-fit: cover;
+        
+      
+}
+}
+@media screen and (max-width: 770px)
+{
+   
+
+.profilename
+{
+    font-size: 1.10rem ;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-left: 5%;
+   
+    margin-top: 20%;
+}
+}
+
+
+.profile-name
+{
+    font-size: 1.5rem ;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-left: -50%;
+    display: inline;
+}
+
+@media screen and (max-width: 765px)
+{
+    .profile-name
+    {
+        font-size: 0.0rem ;
+        font-weight: 400;
+        color: #2c3440;
+        margin-left: 0%;
+        display: hidden;
+    } 
+}
+
+
+  
+
+div.right-profile
+{
+   left: -1%;
+  
+}
+
+
+p.follownum
+{
+    float: right;
+    margin-left: -80%;
+    font-weight:700 ;
+    font-weight: 400;
+    font-size: 17px;
+    margin-top: 3%;
+}  
+
+
+@media screen and (max-width: 700px)
+{
+    p.follownum
+{
+    float: right;
+    margin-left: -80%;
+   
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 15%;
+} 
+}
+
+span.follow-num
+{
+   
+   padding-left:0%;
+   font-size: 1.35rem;
+   color: whitesmoke;
+ 
+}
+
+@media screen and (max-width: 700px)
+{
+    span.follow-num
+    {
+       
+       padding-left:0%;
+       font-size: 1.15rem;
+       color: whitesmoke;
+     
+    } 
+}
+
+span.follow-text
+{
+    margin-right:7%;
+}
+
+
+span.followers
+{
+    margin-left:35%;
+}
+
+
+span.followingtext
+{
+    margin-left: -15%;
+    font-size: 0.95rem;
+}
+
+span.followerstext
+{
+    margin-left: 10%;
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 700px)
+{
+    span.followingtext
+    {
+        margin-left: -15%;
+        font-size: 0.85rem;
+    }
+    
+    span.followerstext
+    {
+        margin-left: 10%;
+        font-size: 0.85rem;
+    }
+    
+}
+
+.vl {
+    border-left: 1px solid #99AABB;
+    height: 50px;
+    position: absolute;
+    margin-right:20px;
+    margin-left: 8px;
+    margin-top: -3%;
+  }
+  @media screen and (max-width: 700px)
+  {
+    span.vl {
+        border-left: 1px solid #99AABB;
+        height: 50px;
+        position: absolute;
+        margin-right:20px;
+        margin-left: 8px;
+        margin-top: -8%;
+      }
+  }
+ 
+  
+  .follow-btn
+{
+    
+        
+    border: none;
+    color: whitesmoke;
+    font-weight: 700;
+ 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    
+}
+@media screen and (max-width: 700px)
+{
+.follow-btn
+{
+    
+        
+    border: none;
+    color: whitesmoke;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top:-10%;
+    left: 50%;
+    font-size: 14px;
+    margin: 2px 2px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    
+}
+}
+
+.following-class
+{
+    background-color: teal;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.following-class:hover
+{
+    background-color: orangered;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.follow-class{
+    background-color: #555;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.follow-class:hover
+{
+    
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transform: translateY(-7px);
+  transition: all 0.3s ease 0s;
+}
+
+.follow-btn:focus
+{
+    
+    outline-style: none;
+    
+}
+
+span.text-profile
+{
+    margin-top: 60%;
+}
+
+img.profile-books
+{
+    width:120px;
+    height:210px;
+    margin: 0%;
+    padding: 0%;
+    
+    
+}
+
+img.index-books
+{
+    width: 85px;
+    height:120px;
+    margin: 0%;
+    padding: 0%;
+    cursor: pointer;
+    
+    
+}
+
+div.books-row
+{
+    margin-left: 18%;
+    margin-right: 0%;
+    
+
+}
+
+
+@media screen and (max-width: 700px)
+{
+    div.books-row
+{
+    margin-left: 0%;
+    margin-right: 0%;
+    
+
+}
+}
+
+div.fav-row
+{
+    padding-left: 13%;
+    padding-right: 0%;
+}
+
+div.book-col-fav
+{
+    margin-right: 0%;
+    margin-left: -2%;
+   
+
+}
+
+div.book-col
+{
+    margin-right: 0%;
+    margin-left: -2%;
+    padding: 0%;
+}
+
+@media screen and (max-width: 700px)
+{
+    div.book-col
+{
+    margin-left: 0%;
+    margin-right:  0%;
+    
+
+}
+div.book-col-fav
+{
+    margin-right: 0%;
+    margin-left: 0.0%;
+    padding: 0%;
+
+}
+div.fav-row
+{
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 0%;
+    
+}
+}
+
+
+
+
+
+
+
+hr.lines-2
+{
+  margin-right: -4%;
+  margin-left: -4%;
+
+}
+@media screen and (max-width: 998px)
+{
+    .books-prof
+    {
+        height: 120px;
+        padding-left: 5px;
+    }
+}
+@media screen and (max-width: 998px)
+{
+
+    img.profile-books
+    {
+        height: 120px;
+        width:82.5px;
+        padding-left: 6px;
+        width:82.5px;
+    }
+
+
+}
+
+.select_NY
+{
+  
+    width:200px;
+    color: #8899AA;
+    background-color: rgb(31, 38, 45);;
+    border: 1px solid #2c3440;
+    
+}
+
+
+@media screen and (max-width: 998px)
+{
+
+    .select_NY
+{
+  
+    width:150px;
+    color: #8899AA;
+    background-color: rgb(31, 38, 45);;
+    border: 1px solid #2c3440;
+    
+}
+
+  #loading{
+   
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-bottom:10%;
+
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+#loading
+{
+    display: none;
+}
+
+.loading{
+   
+    margin-top: 10%;
+    margin-left: 50%;
+    margin-bottom:10%;
+
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .obj{
+    width: 6px;
+    height: 40px;
+    background: white;
+    margin: 0 3px;
+    border-radius: 10px;
+    animation: loading 0.8s infinite;
+  }
+  .obj:nth-child(2){
+    animation-delay: 0.1s;
+  }
+  .obj:nth-child(3){
+    animation-delay: 0.2s;
+  }
+  .obj:nth-child(4){
+    animation-delay: 0.3s;
+  }
+  .obj:nth-child(5){
+    animation-delay: 0.4s;
+  }
+  .obj:nth-child(6){
+    animation-delay: 0.5s;
+  }
+  .obj:nth-child(7){
+    animation-delay: 0.6s;
+  }
+  .obj:nth-child(8){
+    animation-delay: 0.7s;
+  }
+  
+  
+  @keyframes loading {
+    0%{
+      height: 0;
+    }
+    50%{
+      height: 40px;
+    }
+    100%{
+      height: 0;
+    }
+  }
+ 
+.search-img
+{
+    height:111px;
+
+    width: 76px;
+}
+
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
+/* Ratings widget */
+.rate {
+    display: inline-block;
+    border: 0;
+}
+/* Hide radio */
+.rate > input {
+    display: none;
+}
+/* Order correctly by floating highest to the right */
+.rate > label {
+    float: right;
+}
+/* The star of the show */
+.rate > label:before {
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: .3rem .2rem;
+    margin: 0;
+    cursor: pointer;
+    font-family: FontAwesome;
+    content: "\f005 "; /* full star */
+}
+
+/* Half star trick */
+.rate .half:before {
+    content: "\f089 "; /* half star no outline */
+    position: absolute;
+    padding-right: 0;
+}
+/* Click + hover color */
+input:checked ~ label, /* color current and previous stars on checked */
+label:hover, label:hover ~ label { color: teal} /* color previous stars on hover */
+
+/* Hover highlights */
+input:checked + label:hover, input:checked ~ label:hover, /* highlight current and previous stars */
+input:checked ~ label:hover ~ label, /* highlight previous selected stars for new rating */
+label:hover ~ input:checked ~ label /* highlight previous selected stars */ { color: teal;  } 
+
+
+
+.stars-outer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .stars-outer::before {
+    content: "\f005  \f005  \f005  \f005  \f005";
+    font-family: FontAwesome ;
+    font-weight: 900;
+    color: #ccc;
+  }
+  
+  .stars-inner::before {
+    content: "\f005  \f005  \f005  \f005  \f005";
+    font-family: FontAwesome ;
+    font-weight: 900;
+    color: teal;
+  }
+
+  /* like animation */
+
+ i.heart 
+ {
+  transition: all 80ms ease-in;
+}
+
+
+i.heart:active {
+
+	transform: scale(1.55);
+}
+ 
+
+  .setting-input
+  {
+      margin-top: 3%;
+      margin-bottom: 5%;
+      background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 70%;
+  }
+
+  @media screen and (max-width: 998px)
+  {
+    .setting-input
+    {
+        margin-top: 3%;
+        margin-bottom: 5%;
+        background-color: #eee;
+      border: none;
+      padding: 5px 15px;
+      margin: 8px 0;
+      width: 95%;
+    }
+
+    #profileimage-setting
+    {
+        width: 130px;
+        height: 130px;
+    }
+   
+
+  }
+
+  input[type="file"] {
+    display: none;
+}
+.file-upload {
+    border-radius: 0px;
+	border: 1px solid #8899AA;
+	background-color: #8899AA;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 15px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    transition: all 80ms ease-in;
+    cursor: pointer;
+    margin-left: 4%; 
+}
+
+@media screen and (max-width: 400px)
+{
+   
+   .file-upload
+   {
+    margin-left: 9.25%; 
+   }
+
+   .sub-btn
+   {
+       margin-left: 23%;
+
+   }
+}
+
+
+.file-upload:active {
+	transform: scale(0.95);
+}
+
+.file-upload:focus {
+	outline: none;
+}
+
+.file-upload:hover {
+ color: whitesmoke;
+}
+
+}
+
+
+.signin:hover
+{
+    color:whitesmoke;
+    cursor: pointer;
+}
+
+
+
+.signin 
+{
+    color:whitesmoke;
+    cursor: pointer;
+}
+
+
+#logo
+{
+  
+	transition: all 50ms ease-in;
+ 
+   
+
+    
+    
+ 
+}
+
+
+#logo:active {
+	opacity: 0.2;
+}
+
+
+
+#logotitle
+{
+	position: fixed;
+	margin-top: 0.7%;
+	font-size: 20px;
+}
+
+
+
+.butn {
+
+	transition: all 80ms ease-in;
+}
+
+.butn:active {
+	transform: scale(0.95);
+}
+
+.butn:focus {
+	outline: none;
+}
+
+.follow-btn {
+
+	transition: all 80ms ease-in;
+}
+
+.follow-btn:active {
+	transform: scale(0.95);
+}
+
+.follow-btn:focus {
+	outline: none;
+}
+
+
+

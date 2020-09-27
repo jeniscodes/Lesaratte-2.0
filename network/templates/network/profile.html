@@ -1,0 +1,315 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<section class="container-md-fluid mt-5 ">
+  <section class="profile-details">
+<div class="row ">
+  <div class="col-md-2 col-3   pl-0 pr-0 mr-0">
+    <img id="profileimage"  class="image-profile img-fluid" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'"  alt="100x100" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ user.imagefile }}'> 
+  </div>
+  <div class="d-block d-md-none mt-3  "> <div class="  col-6"> <span class="profilename  "> {{user.name}} </span> 
+    <br>@{{user.username}} </div></div>
+
+  
+<div class="col-md-10 pl-0 ml-0  right-profile pr-5">
+ 
+  <p class="follownum mr-5">
+  <span class= "follow-num"> <span id="following_num" class="like-num" data-toggle="modal" data-target="#exampleModalLong"> {{ followings }} </span>    <span class="followers">
+     <span id="followers_num" class="like-num" data-toggle="modal" data-target="#followers_list"> {{ followers}}</span>   </span>  </span>
+  <br>
+  <span class="follow-text mr-5"> 
+    <span class="followingtext ">   FOLLOWING </span>   <span class="vl"></span>  <span class="followerstext">    FOLLOWERS </span>  </span> </p>
+    <br>
+
+   
+  <p class="profile-name ml-0 pt-0 "> {{user.name}}  </p> 
+    
+  {% if follow_ == 'yes' %}
+  
+ 
+   
+              
+    {% if followed == 'yes' %}
+    <span id="follow-func">
+    <button  class="follow-btn following-class ml-5" id="follow"  onmouseover="changeText(this)"  onmouseout="defaultText(this)" onclick="follow(this)" data-id={{user.id}}>  
+        Following 
+    </button> </span>
+    {% else %}
+    <span id="follow-func">
+    <button  class="follow-btn follow-class ml-5" id="follow"   onclick="follow(this)" data-id={{user.id}}> 
+        Follow  </button> </span>
+ 
+    
+    
+    {% endif %}
+    {% endif %}
+   
+  
+</button>
+  <p class=" d-none d-md-block user-name"> @{{ user.username }} </p>
+ 
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+<section class="favorite-books mt-5">
+
+  <p class ="texttitle mt-5 mb-0 ">  Favorite Books </p>  
+
+  <hr class="mt-0 pt-0">
+
+        
+    
+  <div class=' fav-row row '>
+  {% for book in favlist %}
+
+
+ 
+  <div class="col-sm-2 col-3 book-col-fav  ">
+      <div class="tooltipt">
+
+      
+      
+      <img src="{{ book.img }}"  class="img-fluid  img-open books-prof mt-1  mb-1" onclick="location.href='/opengbook/{{ book.isbn }}'"> 
+  
+      <span class="tooltiptext d-none d-md-block">  
+          {{ book.title }} 
+         </span>
+  </div>
+</div>
+  {% endfor %}
+</div>
+
+
+
+<section class="views mt-5">
+
+<span class=" text-profile  py-0  mt-5 "> POPULAR REVIEWS
+  {% if more == "yes" %}
+  <a  class='more py-0 my-0' href={% url 'see_more' topic="profile" field="popular" isbn=user.username %} > See more </a>
+  {% endif %}  <hr class="mt-1" > </span>
+ 
+</p>
+
+{% if popularreviews %}
+    
+    {% for review in popularreviews %}
+    
+    <div class="row">
+
+      <div class="col-sm-1 col-3 ">
+        <img class=" avatar-book my-0" alt="100x100" onclick="location.href='/open_review/{{ review.id }}'" data-holder-rendered="true" src='{{ review.img_book }}'>   
+        
+
+      </div>
+      <div class="col-sm-10 col-9 col-right">
+
+        <span class="book-title" onclick="location.href='/open_review/{{ review.id }}'"> {{review.title}} </span>   <span class="timestamp mt-2" >{{ review.timestamp}}  </span> 
+        <p class=" pt-2">   <img class=" avatar-half py-0 my-0" alt="100x100" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'" onclick="location.href='/profile/{{ review.reviewerid }}'" data-holder-rendered="true" src='/media/images/{{ review.image }}'> 
+          <span class="pl-2 reviewby " onclick="location.href='/profile/{{ review.reviewerid }}'">   {{ review.reviewername }}  
+          @{{ review.reviewerusername}}  </span> <span class="ratestar r{{review.id}} ml-2 " data-rate= "{{ review.bookrating }}" data-id= "{{ review.id }}" > <span class="stars-outer">
+            <span class="stars-inner"></span>
+          </span> </span></p>
+      
+
+      </div>
+
+    </div>
+    
+    <p> <pre class="content-books"> {{ review.content}}   </pre> </p>  
+     <div class="like-block ">
+         <span onclick="like(this)" id="like{{review.id}}" data-id="{{ review.id }}"> 
+         {% if review.liked == 'yes' %}
+       
+                  <i class="fa fa-heart heart " style="color:teal"></i>
+         {% else %}
+         <i  class="fa heart">&#xf08a;</i>
+         {% endif %}
+    
+         {{ review.likes }}  
+         </span> <span class="ml-5" onclick="location.href='/open_review/{{ review.id }}'" > 
+         <i class="fa fa-comment-o" aria-hidden="true"></i>  {{ review.comments }}
+         </span>  
+         
+    </div> 
+      
+      
+    
+      
+      <hr class="style14">
+      {% endfor %}
+      {% else %}
+           No reviews yet.
+    
+           
+      {% endif %}
+
+<br>
+<br>
+<br>
+
+  <span class=" text-profile  py-0  mt-5 "> RECENT REVIEWS
+    {% if more == "yes" %}
+    <a  class='more py-0 my-0' href={% url 'see_more' topic="profile" field="recent" isbn=user.username %} > See more </a>
+    {% endif %}  <hr class="mt-1" > </span>
+   
+  </p>
+  
+  {% if recentreviews %}
+  
+ 
+
+
+
+  <div class='row books-row px-1'>
+    {% for book in recentreviews %}
+  
+  
+   
+    <div class="col-sm-2 col-3  book-col  ">
+        <div class="tooltipt">
+  
+        
+        
+        <img src="{{ book.img_book }}"  class="img-fluid profile-books img-open mt-1  mb-1" onclick="location.href='/open_review/{{ book.id }}'"> 
+    
+        <span class="tooltiptext d-none d-md-block">  
+            {{ book.title }} 
+            <br>  ({{ book.year  }})</span>
+    </div>
+  </div>
+    {% endfor %}
+  </div>
+  
+    
+    
+  
+    
+
+    {% else %}
+         No reviews yet.
+  
+         
+    {% endif %}
+  
+
+ 
+</section>
+
+
+</section>
+
+
+
+
+
+
+</section>
+
+<!--Following  Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+              
+     <h5 class="like"> Following   <hr class=" lines-2 ">   </h5>
+     
+    
+    
+          <div id="modalbodyfollowed" > 
+        
+
+        {% if following %}
+        
+        {% for user in following %}
+
+        <img class=" avatar ml-2 py-0 my-0" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'" alt="100x100" onclick="location.href='/profile/{{ user.following.id }}'" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ user.following.imagefile }}'> 
+        <span onclick="location.href='/profile/{{ user.following.id }}'" class=" comment-user ml-md-3 ml-1 mt-0 pt-0 "> {{ user.following.name }}  
+
+        @{{user.following.username}} </span> 
+
+        <hr class="lines">
+       
+
+     
+
+        {% endfor %}
+  
+        {% endif %}
+
+      </div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!--Followers  Modal -->
+<div class="modal fade" id="followers_list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+              
+     <h5 class="like"> Followers  <hr class=" lines-2 ">   </h5>
+     
+    
+    
+          <div id="modalbodyfollowers" > 
+        
+
+        {% if followers %}
+
+      
+
+    
+        
+        {% for user in followerslist %}
+        
+        
+
+        <img class=" avatar ml-2 py-0 my-0" alt="100x100" onerror="this.onerror=null;this.src='https://designstudio.com/wp-content/themes/designstudio/assets/img/defaultAvatar.jpg;'"  onclick="location.href='/profile/{{ user.follower.id }}'" data-holder-rendered="true" src='{{ MEDIA_URL }}{{ user.follower.imagefile }}'> 
+        <span onclick="location.href='/profile/{{ user.follower.id }}'" class=" comment-user ml-md-3 ml-1 mt-0 pt-0 "> {{ user.follower.name }}  
+
+        @{{user.follower.username}}  </span> 
+
+        <hr class="lines">
+       
+
+     
+
+        {% endfor %}
+  
+        {% endif %}
+
+      </div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'network/profile.js' %}"></script>
+{% endblock %}
+
+
+
+
