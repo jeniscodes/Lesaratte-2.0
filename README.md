@@ -18,7 +18,4 @@ There is a also a setting page for logged in user which enables them to upload o
 
 The whole site is totally mobile resposive.
 
-
-The media folder contains the user images for created accounts. Network folder is the main app folder which consist all the html, javascript , models , views and settings file. The backend is done totatly on views.py file where as frontend on vanilla JavaScript totally with bootstrap and fontawesome for some styling and icons.
-
-This project is way more functional and complex than all other projects.I have also used much more animation through css and some svg to create a more sophisticated and friendly modern feel. 
+. 
