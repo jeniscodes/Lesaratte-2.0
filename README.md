@@ -16,6 +16,6 @@ We can also search for books by inputing title, author name, isbn or year in the
 
 There is a also a setting page for logged in user which enables them to upload or change their username, name and display image at any instant.
 
-The whole site is totally mobile resposive.
+The whole site is totally mobile responsive.
 
 . 
