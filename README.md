@@ -1,6 +1,3 @@
-LESARATTE
-
-
 Lesaratte is a book reviewing site where you can search for books, add reviews , add ratings on your reviews, interact with other reviews by liking and commenting on them. You can also follow other reviewers so you can follow reviews and activities of your following list. There is also a feature called favorite list where you can list your top 12 favorite books which will be displayed on your profile. SO, other reviewers and users can glance on your favorite genre and favorite books. 
 
 Lesaratte  displays popular reviews on the home page from your friends if you have  logged in and from all users if you are not logged in.
